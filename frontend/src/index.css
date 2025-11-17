@@ -1,0 +1,73 @@
+:root {
+  /* Tipografía y base */
+  font-family: 'Open Sans', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Paleta BarbApp (inspirada en barbería): azul, rojo, blanco, gris oscuro */
+  --barb-blue: #0d47a1;   /* azul profundo */
+  --barb-blue-600: #1e3a8a; /* variante accesible */
+  --barb-red: #e53935;    /* rojo vibrante */
+  --barb-white: #ffffff;
+  --barb-light: #f5f7fb;  /* fondo suave */
+  --barb-dark: #122032;   /* texto principal */
+  --barb-border: #e5e7eb;
+  --focus: #2563eb;
+
+  color-scheme: light;
+  color: var(--barb-dark);
+  background-color: var(--barb-white);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: var(--barb-blue); text-decoration: none; font-weight: 500; }
+a:hover { color: var(--barb-blue-600); }
+
+body { margin: 0; min-width: 320px; min-height: 100vh; background: var(--barb-light); }
+
+h1 { font-size: 2rem; line-height: 1.15; margin: 0; color: var(--barb-blue-600); }
+
+button { border-radius: .5rem; border: 1px solid var(--barb-border); padding: .6rem 1rem; font-size: 1rem; font-weight: 600; font-family: inherit; background-color: var(--barb-white); cursor: pointer; transition: all .2s ease; }
+button:hover { border-color: var(--barb-blue); color: var(--barb-blue); }
+button:focus, button:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+/* Utilidades y componentes */
+.app-shell { max-width: 760px; margin: 2rem auto; padding: 0 1rem; }
+.brand-frame { background: var(--barb-white); border-radius: .75rem; border: 1px solid var(--barb-border); overflow: hidden; box-shadow: 0 6px 24px rgba(0,0,0,.08); }
+.brand-header { padding: 1rem 1.25rem; background: repeating-linear-gradient(135deg, var(--barb-red) 0 16px, var(--barb-white) 16px 32px, var(--barb-blue) 32px 48px, var(--barb-white) 48px 64px); color: var(--barb-white); }
+.brand-header h1 { color: var(--barb-white); }
+.brand-content { padding: 1.25rem; background: var(--barb-white); }
+.brand-title { text-align: center; font-weight: 800; margin-top: 0; }
+.section { margin-top: 1rem; text-align: left; }
+.section-row { display:flex; gap:1rem; margin-top:1rem; }
+.section-row .section { flex:1; margin-top:0; min-width:0; }
+@media (max-width: 640px) { .section-row { flex-direction:column; } }
+.label { display:block; font-weight:700; margin-bottom:.25rem; }
+.field { width: 100%; padding: .55rem .6rem; border:1px solid var(--barb-border); border-radius: .5rem; box-sizing:border-box; }
+.hint { color:#6b7280; font-size:.875rem; margin-top:.25rem; display:block; }
+.btn-primary { background: var(--barb-blue); color: var(--barb-white); border-color: var(--barb-blue); }
+.btn-primary:hover { background: var(--barb-blue-600); border-color: var(--barb-blue-600); color: var(--barb-white); }
+.hours-grid { display:flex; flex-wrap:wrap; gap:.5rem; }
+.hour-btn { border:1px solid var(--barb-border); background:#f7f7fb; color:#333; }
+.hour-btn[aria-pressed="true"] { background: var(--barb-blue); color: var(--barb-white); border-color: var(--barb-blue); }
+.alert { margin-top:.75rem; font-weight:600; }
+.alert.ok { color: #0f9d58; }
+.alert.error { color: #b00020; }
+/* Footer */
+.site-footer { margin-top: 2.5rem; background: var(--barb-white); border-top: 6px solid var(--barb-red); padding: 1.75rem 1rem; font-size:.95rem; }
+.footer-grid { display: grid; gap:1.25rem; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); }
+.footer-section h3 { margin:0 0 .5rem; font-size:1rem; font-weight:700; color: var(--barb-blue-600); text-align:center; }
+.footer-links { list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:.75rem; justify-content:center; align-items:center; }
+.footer-link { display:flex; align-items:center; gap:.5rem; color: var(--barb-dark); text-decoration:none; padding:.4rem .55rem; border-radius:.5rem; border:1px solid var(--barb-border); background:#f9fafb; transition: background .2s, color .2s, border-color .2s; }
+.footer-link:hover { background: var(--barb-blue); color: var(--barb-white); border-color: var(--barb-blue); }
+.footer-link svg { width:20px; height:20px; flex-shrink:0; }
+.copyright { text-align:center; margin-top:1.25rem; font-size:.75rem; color:#6b7280; }
+.form-actions { text-align:center; margin-top:.75rem; }
+.brand-logo { display:block; margin: 0 auto .5rem; height: 180px; width:auto; }
+.footer-logo { height: 150px; width:auto; display:block; margin: 0 auto .75rem; }
+
+/* Tema claro fijo: no redefinimos por prefers-color-scheme para mantener identidad visual */

@@ -1,0 +1,3 @@
+/* Limpieza del CSS por defecto de la plantilla y estilos mínimos del layout */
+#root { max-width: 100%; margin: 0 auto; padding: 0; }
+.app { text-align: left; }
